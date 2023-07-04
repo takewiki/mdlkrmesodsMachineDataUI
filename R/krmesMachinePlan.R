@@ -39,7 +39,10 @@ buttonkrmesMachinePlanUI_left <- function() {
 
   res <- tagList(
 
-    shiny::actionButton(inputId = 'btn_krmesMachinePlanUI_view' , label = '预览表单数据'),
+
+    tsui::mdl_dateRange(id = 'dr_krmesMachinePlanUI',label = '下达日期',startDate = Sys.Date()-30,endDate = Sys.Date()),
+    shiny::actionButton(inputId = 'btn_krmesMachinePlanUI_view' , label = '查询派工'),
+    tsui::mdl_download_button(id = 'dl_krmesMachinePlanUI',label = '下载派工')
 
 
   )
